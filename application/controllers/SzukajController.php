@@ -34,7 +34,7 @@ class SzukajController extends Album_Controller_Action
 			$wyrazenie = addslashes($wyrazenie);
 		}
 
-		@ $db = new mysqli('sql.mstaszowski.nazwa.pl','3307', 'mstaszowski_2', '956018Ab', 'mstaszowski_2');
+		@ $db = new mysqli();
 
 		if (mysqli_connect_errno())
 		{
