@@ -1,0 +1,52 @@
+body,html {
+   font-size:100%;
+   margin: 0;
+   font-family: Verdana,Arial,Helvetica,sans-serif;
+   color: #000;
+   background-color: #fff;
+}
+
+h1 {
+   font-size:1.4em;
+   color: yellow;
+   background-color: transparent;
+}
+
+#content {
+   width: 1000px;
+   margin: 0 auto;
+}
+
+label {
+   width: 100px;
+   display: block;
+   float: left;
+}
+
+#formbutton {
+   margin-left: 100px;
+}
+
+a{
+   color: #800000;
+}
+#blog{
+	margin-right:400px;
+	margin-bottom:50px;
+
+}
+hr {
+	color: #f00;
+	background: #f00;
+	height: 2px;
+}
+
+#blog h1{
+	font-size:15pt;
+	color:black;
+}
+
+#blog h2{
+	font-size:7pt;
+	color:black;
+}

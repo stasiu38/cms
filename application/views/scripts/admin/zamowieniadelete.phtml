@@ -1,0 +1,17 @@
+<h1><?php echo $this->escape($this->title); ?></h1>
+
+<?php if ($this->zamowienia) :?>
+	<form action="<?php echo $this->baseUrl ?>/admin/zamowieniadelete" method="post">
+		<p>Czy napewno chcesz usunąć strone '
+			<?php echo $this->escape($this->zamowienia->idzamowienia); ?>
+		<div>
+			<input type="hidden" name="idzamowienia" value="<?php
+			echo $this->zamowienia->idzamowienia; ?>" />
+			<input type="submit" name="del" value="Yes" />
+			<input type="submit" name="del" value="No" />
+		</div>
+	</form>
+
+<?php else: ?>
+	<p>Cannot find pages.</p>
+<?php endif;?>

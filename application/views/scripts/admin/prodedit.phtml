@@ -1,0 +1,35 @@
+<form action="<?php echo $this->baseUrl ?>/admin/<?php
+echo $this->action; ?>" method="post">
+<div>
+	<label for="pro_tytul">Tytuł</label>
+	<input type="text" name="pro_tytul" value="<?php
+	echo $this->escape(trim($this->produkty->pro_tytul));?>"/>
+</div>
+<div>
+	<label for="pro_autor">Podaj autora</label>
+	<input type="text" name="pro_autor" value="<?php
+	echo $this->escape(trim($this->produkty->pro_autor));?>"/>
+</div>
+<div>
+	<label for="pro_opis">Podaj krótki opis</label>
+	<input type="text" name="pro_opis" value="<?php
+	echo $this->escape(trim($this->produkty->pro_opis));?>"/>
+</div>
+<div>
+	<label for="pro_tekst">Podaj opis</label>
+	<input type="text" name="pro_tekst" value="<?php
+	echo $this->escape(trim($this->produkty->pro_tekst));?>"/>
+</div>
+<div>
+	<label for="pro_cena">Podaj cene</label>
+	<input type="text" name="pro_cena" value="<?php
+	echo $this->escape(trim($this->produkty->pro_cena));?>"/>
+</div>
+
+	<div id="formbutton">
+		<input type="hidden" name="pro_id" value="<?php
+		echo $this->produkty->pro_id; ?>" />
+		<input type="submit" name="proedit" value="<?php
+		echo $this->escape($this->buttonText); ?>" />
+	</div>
+</form>

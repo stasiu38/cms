@@ -1,0 +1,39 @@
+<?php 
+	echo $this->form( 
+		'form_referencje', 
+		array( 
+			'action' => '/admin/addsubmit',
+			'method' => 'post',
+			'enctype' => 'multipart/form-data'
+		)
+	); 
+?>	<?php if( $this->oRequest->getParam( 'error_nazwa' ) ): ?>
+	<div class="error"><?php echo $this->oRequest->getParam( 'error_nazwa' ) ?></div>
+<?php endif; ?>
+
+<div class="row">
+	<label for="nazwa">Podaj tytul: </label>
+	<?php echo $this->formText( 'nazwa', $this->oRequest->getParam( 'nazwa' ) ) ?>
+</div>
+<div class="row">
+	<label for="body">Podaj zawartosc: </label>
+	<?php echo $this->formText( 'body', $this->oRequest->getParam( 'body' ) ) ?>
+</div>
+<div class="row">
+	<label for="title">Podaj autora: </label>
+	<?php echo $this->formText( 'title', $this->oRequest->getParam( 'title' ) ) ?>
+</div>
+
+
+	
+	<?php if( $this->oRequest->getParam('error_logo') ): ?>
+		<div class="error"><?php echo $this->oRequest->getParam('error_logo') ?></div>
+	<?php endif; ?>
+	<div class="row">
+		<label for="logo">Wybierz logo firmy (jpg): </label>
+		<?php echo $this->formFile( 'logo' ); ?>
+	</div>
+
+	<div class="cl">&nbsp;</div>
+	<?php echo $this->formSubmit( 'zapisz', 'Zapisz' ); ?>
+</form>

@@ -1,0 +1,18 @@
+
+<h1><?php echo $this->escape($this->title); ?></h1>
+
+<?php if ($this->kategorie) :?>
+	<form action="<?php echo $this->baseUrl ?>/admin/deletekat" method="post">
+		<p>Are you sure that you want to delete '
+			<?php echo $this->escape($this->kategorie->kat_nazwa); ?>
+		<div>
+			<input type="hidden" name="kat_id" value="<?php
+			echo $this->kategorie->kat_id; ?>" />
+			<input type="submit" name="del" value="Yes" />
+			<input type="submit" name="del" value="No" />
+		</div>
+	</form>
+
+<?php else: ?>
+	<p>Cannot find pages.</p>
+<?php endif;?>

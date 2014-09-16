@@ -1,0 +1,30 @@
+<?php
+echo $this->form(
+	'form_produktykategorie',
+	array(
+		'action' => '/admin/produktykategoriesubmit',
+		'method' => 'post'
+	)
+);
+?>
+<?php echo $this->formHidden( 'id', $this->oRequest->getParam( 'pro_id' ) ); ?>
+
+<div class="kategorie">
+	<p class="header">Umieść w kategoriach:</p>
+	<?php foreach( $this->aKategorie as $aKategoria ): ?>
+		<div class="kategoria">
+			<?php
+			echo $this->formCheckbox(
+				'kategorie[]',
+				$aKategoria['id'],
+				array( 'checked' => ( $aKategoria['id'] == $aKategoria['subid'] ) )
+			);
+			?>
+			<?php echo $aKategoria[ 'nazwa' ]; ?>
+		</div>
+	<?php endforeach; ?>
+</div>
+
+<?php echo $this->formSubmit( 'zapisz', 'Zapisz' ); ?>
+
+</form>

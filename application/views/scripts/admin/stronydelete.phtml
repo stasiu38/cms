@@ -1,0 +1,18 @@
+
+<h1><?php echo $this->escape($this->title); ?></h1>
+
+<?php if ($this->strony) :?>
+	<form action="<?php echo $this->baseUrl ?>/admin/stronydelete" method="post">
+		<p>Czy napewno chcesz usunąć strone '
+			<?php echo $this->escape($this->strony->str_nazwa); ?>
+		<div>
+			<input type="hidden" name="str_id" value="<?php
+			echo $this->strony->str_id; ?>" />
+			<input type="submit" name="del" value="Yes" />
+			<input type="submit" name="del" value="No" />
+		</div>
+	</form>
+
+<?php else: ?>
+	<p>Cannot find pages.</p>
+<?php endif;?>

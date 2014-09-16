@@ -1,0 +1,42 @@
+<div class="col-md-9">
+<form action="<?php echo $this->baseUrl ?>/zakup/kup/<?php
+                  echo $this->action; ?>" method="post">
+			<div class="thumbnail">
+				<div class="caption-full">
+					<h4 class="pull-right"><?php echo $this->oProdukty->pro_cena; ?></h4>
+					<h4><a href="/produkty/produkt/pro_id/<?php echo $this->oProdukty->pro_id;?>"><?php echo $this->oProdukty->pro_tytul; ?></a>
+					</h4>
+				<input type="hidden" name="wartosc" value="<?php echo $this->oProdukty->pro_cena; ?>">
+				<input type="hidden" name="pro_tytul" value="<?php echo $this->oProdukty->pro_tytul; ?>">
+				<input type="hidden" name="data" value="<?php echo $data=date("Y-m-d");?>">
+               <div>
+                  <label for="dos_nazwisko">Podaj nazwisko</label>
+                  <input type="text" name="dos_nazwisko" value=""/>
+               </div>
+               <div>
+                  <label for="dos_adres">Podaj ulice</label>
+                  <input type="text" name="dos_adres" value=""/>
+               </div>
+               <div>
+               <label for="dos_miasto">Podaj miasto</label>
+               <input type="text" name="dos_miasto" value=""/>
+               </div>
+               <div>
+               <label for="dos_wojew">Podaj wojewodztwo</label>
+               <input type="text" name="dos_wojew" value=""/>
+               </div>
+               <label for="dos_kod_poczt">Podaj kod pocztowy</label>
+               <input type="text" name="dos_kod_poczt" value=""/>
+               </div>
+               <label for="email">Podaj email</label>
+               <input type="text" name="email" value=""/>
+               </div>
+               <div id="formbutton">
+                  <input type="submit" name="Kup" value="KUP" />
+               </div>
+            </form>
+
+				</div>
+
+
+			</div>

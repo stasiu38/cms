@@ -1,0 +1,37 @@
+<?php echo $this->escape($this->title); ?></title>
+
+<table>
+	<tr>
+		<th>Zamwienie nr:</th>
+		<th>Tytuł:</th>
+		<th>Wartość:</th>
+		<th>Data</th>
+		<th>Nazwisko</th>
+		<th>Adres</th>
+		<th>Miasto</th>
+		<th>Kod pocztowy</th>
+		<th>Województwo</th>
+		<th>Email</th>
+		<th>&nbsp;</th>
+	</tr>
+
+	<?php foreach($this->zamowienia as $zamowienia) : ?>
+		<tr>
+			<td><?php echo $this->escape($zamowienia->idzamowienia);?></td>
+			<td><?php echo $this->escape($zamowienia->pro_tytul);?></td>
+			<td><?php echo $this->escape($zamowienia->wartosc);?></td>
+			<td><?php echo $this->escape($zamowienia->data);?></td>
+			<td><?php echo $this->escape($zamowienia->dos_nazwisko);?></td>
+			<td><?php echo $this->escape($zamowienia->dos_adres);?></td>
+			<td><?php echo $this->escape($zamowienia->dos_miasto);?></td>
+			<td><?php echo $this->escape($zamowienia->dos_kod_poczt);?></td>
+			<td><?php echo $this->escape($zamowienia->dos_wojew);?></td>
+			<td><?php echo $this->escape($zamowienia->email);?></td>
+			<td>
+				<a href="<?php echo $this->baseUrl; ?>/admin/zamowieniadelete/idzamowienia/<?php
+				echo $zamowienia->idzamowienia;?>">Delete</a>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+
+</table>

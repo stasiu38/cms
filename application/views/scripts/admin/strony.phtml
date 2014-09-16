@@ -1,0 +1,23 @@
+<?php echo $this->escape($this->title); ?></title>
+<p><a href="<?php echo $this->baseUrl; ?>/admin/stronyadd">Dodaj nową strone</a></p>
+<table>
+	<tr>
+		<th>nazwa</th>
+		<th>zawartosc</th>
+		<th>&nbsp;</th>
+	</tr>
+
+	<?php foreach($this->strony as $strony) : ?>
+		<tr>
+			<td><?php echo $this->escape($strony->str_nazwa);?></td>
+			<td><?php echo $this->escape($strony->str_zawartosc);?></td>
+			<td>
+				<a href="<?php echo $this->baseUrl; ?>/admin/stronyedit/str_id/<?php
+				echo $strony->str_id;?>">Edytuj</a>
+				<a href="<?php echo $this->baseUrl; ?>/admin/stronydelete/str_id/<?php
+				echo $strony->str_id;?>">Delete</a>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+
+</table>

@@ -1,0 +1,48 @@
+
+
+<div class="row">
+
+	<div class="col-md-3">
+		<p class="lead">Shop Name</p>
+		<?php foreach($this->kategorie as $kategorie) : ?>
+			<div class="list-group">
+				<a href="<?php echo $this->url(array(
+					'controller' => 'produkty',
+					'action' => 'kategorie',
+					'kat_id' => $kategorie['kat_id']
+				));?>" class="list-group-item"><?php echo $this->escape($kategorie->kat_nazwa);?></a>
+
+			</div>
+		<?php endforeach; ?>
+	</div>
+
+	<div class="col-md-9">
+
+
+
+		<div class="row">
+			<?php foreach( $this->aPrzypisaneProdukty as $aPrzypisanyProdukt): ?>
+			<div class="col-sm-4 col-lg-4 col-md-4">
+				<div class="thumbnail">
+					<img src="/../public/images/logo/<?php echo $aPrzypisanyProdukt['logo']; ?>" alt="logo">
+					<div class="caption">
+						<h4 class="pull-right"><?php echo $aPrzypisanyProdukt['cena']; ?> zł</h4>
+						<h4 style="font-size:8pt;"><?php echo $aPrzypisanyProdukt['autor']; ?></h4>
+						<h4><span class="tytul"><a href="<?php echo $this->baseUrl; ?>/produkty/produkt/pro_id/<?php echo $aPrzypisanyProdukt['id']; ?>"><?php echo $aPrzypisanyProdukt['tytul']; ?></a></span>
+						</h4>
+						<p><?php echo $aPrzypisanyProdukt['opis']; ?> </p>
+						<h1 style="color:orange;font-size:15pt;"><a href="<?php echo $this->baseUrl; ?>/zakup/index/pro_id/<?php echo $aPrzypisanyProdukt['id']; ?>">Kup</h1>
+					</div>
+
+				</div>
+			</div>
+			<?php endforeach; ?>
+
+
+
+
+		</div>
+
+	</div>
+
+</div>

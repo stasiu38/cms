@@ -1,0 +1,21 @@
+<?php
+echo $this->form(
+	'file',
+	array(
+		'action' => '/admin/addsubwtyczka',
+		'method' => 'post',
+		'enctype' => 'multipart/form-data'
+	)
+);
+?>
+<?php echo $this->formHidden( 'wt_id', $this->oRequest->getParam( 'wt_id' ) ); ?>
+
+
+Select a file:
+<input type="file" name="file">
+<p>
+	<input type="Submit" name="submit" value="Send File">
+</p>
+</form>
+
+<div class="cl">&nbsp;</div>

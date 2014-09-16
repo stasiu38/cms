@@ -1,0 +1,19 @@
+<form action="<?php echo $this->baseUrl ?>/admin/<?php
+echo $this->action; ?>" method="post">
+	<div>
+		<label for="str_nazwa">Podaj nazwe Strony</label>
+		<input type="text" name="str_nazwa" value="<?php
+		echo $this->escape(trim($this->strony->str_nazwa));?>"/>
+	</div>
+	<div>
+		<label for="str_zawartosc">Wpisz zawartosc strony</label>
+		<input type="text" name="str_zawartosc" value="<?php
+		echo $this->escape(trim($this->strony->str_zawartosc));?>"/>
+	</div>
+	<div id="formbutton">
+		<input type="hidden" name="str_id" value="<?php
+		echo $this->strony->str_id; ?>" />
+		<input type="submit" name="stronyadd" value="<?php
+		echo $this->escape($this->buttonText); ?>" />
+	</div>
+</form>

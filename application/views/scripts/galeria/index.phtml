@@ -1,0 +1,48 @@
+<head>
+		<title>Canvas page flipper</title>
+		<link rel="stylesheet" href="/public/styles/style.css" />
+	</head>
+<div class="zdjecia">
+	<?php if( !$this->aGaleria ): ?>
+		<p class="header">Brak gelerii.</p>
+	<?php else: ?>
+
+	<?php endif; ?>
+	<body >
+
+	<ul id="lstImages" class="imagesSource" ">
+	<?php foreach( $this->aGaleria as $aZdjecie ): ?>
+
+
+				<li ><img  src="<?php echo $this->sWizytowkiKatalog . $aZdjecie->gal_plik; ?>" /></li>
+
+
+
+		<?php endforeach; ?>
+		</ul>
+         		<script type="text/javascript" src="/public/js/lib/jquery-1.4.2.min.js"></script>
+         		<script type="text/javascript" src="/public/js/lib/jquery-1.4.1-vsdoc.js"></script>
+         		<script type="text/javascript" src="/public/js/javascripts/jquery.pageFlipper.js"></script>
+         		<script type="text/javascript">
+         			$(document).ready(function () {
+
+
+         				$('#lstImages').pageFlipper({
+         					pageWidth: 382,
+							pageHeight: 542,
+         					fps: 15,
+         					easing: 0.8,
+         					backgroundColor: '#6F7068'
+         				});
+
+         				$('.canvasHolder').css('left', 310 + 'px');
+         				$('#mouse').css({
+         					width: 100 + 'px',
+         					height: 100 + 'px',
+
+
+         				});
+         			});
+         		</script>
+         	</body>
+

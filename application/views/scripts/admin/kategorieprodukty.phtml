@@ -1,0 +1,46 @@
+<div class="produkty">
+	<?php if( !$this->aPrzypisaneProdukty ): ?>
+		<p class="header">Brak produktów w tej kategorii.</p>
+	<?php else: ?>
+		<p class="header">Lista produktów w kategorii:</p>
+	<?php endif; ?>
+
+	<?php foreach( $this->aPrzypisaneProdukty as $aPrzypisanyProdukt): ?>
+		<div class="produkt">
+			<span class="tytul"><?php echo $aPrzypisanyProdukt['tytul']; ?></span>
+			<span class="opcje">
+				<a href="<?php echo $this->url(array(
+					'controller' => 'admin',
+					'action' => 'kategorieusunprodukt',
+					'pro_id' => $aPrzypisanyProdukt[ 'id' ],
+					'kat_id' => $this->iKatId
+					), '', true); ?>"
+					onclick="return confirm('Czy napewno chcesz usunąć produkt z kategorii?');">
+					Usuń z kategorii
+				</a>
+			</span>
+			<div class="cl">&nbsp;</div>
+		</div>
+	<?php endforeach; ?>
+</div>
+
+<div class="produkty">
+	<p class="header">Lista nieprzypisanych produktów:</p>
+	<?php foreach( $this->aNieprzypisaneProdukty as $aNieprzypisanyProdukt): ?>
+		<div class="produkt">
+			<span class="tytul"><?php echo $aNieprzypisanyProdukt['tytul']; ?></span>
+			<span class="opcje">
+				<a href="<?php echo $this->url(array(
+					'controller' => 'admin',
+					'action' => 'kategoriedopiszprodukt',
+					'pro_id' => $aNieprzypisanyProdukt['id'],
+					'kat_id' => $this->iKatId
+					), '', true); ?>">
+					Dopisz do kategorii
+				</a>
+			</span>
+			<div class="cl">&nbsp;</div>
+		</div>
+	<?php endforeach; ?>
+</div>
+<div>&nbsp;</div>

@@ -1,0 +1,51 @@
+<p class="header">
+	Dodajesz zdjęcia do <b><?php echo $this->aProdukt->pro_tytul; ?></b>
+</p>
+<?php
+echo $this->form(
+	'form_zdjecia',
+	array(
+		'action' => '/admin/dodajgaleria',
+		'method' => 'post',
+		'enctype' => 'multipart/form-data'
+	)
+);
+?>
+<?php echo $this->formHidden( 'pro_id', $this->oRequest->getParam( 'pro_id' ) ); ?>
+
+<?php if( $this->oRequest->getParam( 'error_zdjecie' ) ): ?>
+	<div class="error"><?php echo $this->oRequest->getParam( 'error_zdjecie' ) ?></div>
+<?php endif; ?>
+<div class="plik">
+	<?php echo $this->formLabel( 'zdjecie', 'Wybierz projekt wizytówki (jpg):' ) ?>
+	<?php echo $this->formFile( 'zdjecie' ); ?>
+</div>
+
+<?php echo $this->formSubmit( 'zapisz', 'Zapisz' ); ?>
+</form>
+<div class="zdjecia">
+	<?php if( !$this->aGaleria ): ?>
+		<p class="header">Brak gelerii.</p>
+	<?php else: ?>
+		<p class="header">Lista zdjęć w galerii:</p>
+	<?php endif; ?>
+	<?php foreach( $this->aGaleria as $aZdjecie ): ?>
+		<div class="zdjecie">
+			<span>
+				<img src="<?php echo $this->sWizytowkiKatalog . $aZdjecie->gal_plik; ?>" />
+			</span>
+			<span class="opcje">
+				<a href="<?php echo $this->url(array(
+					'controller' => 'admin',
+					'action' => 'zdjecieusun',
+					'gal_id' => $aZdjecie->gal_id,
+					'pro_id' => $this->oRequest->getParam( 'pro_id' )
+				), '', true); ?>"
+				   onclick="return confirm('Czy napewno chcesz usunąć zdjęcie przypisane do wizytówki <?php echo $this->aProdukt->pro_tytul ?>');">
+					Usuń
+				</a>
+			</span>
+		</div>
+	<?php endforeach; ?>
+</div>
+<div class="cl">&nbsp;</div>

@@ -1,0 +1,58 @@
+<?php echo $this->escape($this->title); ?></title>
+
+<table>
+	<tr>
+		<th>Wtyczka nr:</th>
+		<th>Tytuł</th>
+		<th>Status</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+	</tr>
+
+	<?php foreach($this->wtyczka as $wtyczka) : ?>
+		<tr>
+			<td><?php echo $this->escape($wtyczka->wt_id);?></td>
+			<td><?php echo $this->escape($wtyczka->nazwa);?></td>
+			<td><?php  $status =  $this->escape($wtyczka->online);
+				if($status == 2){
+					echo 'Włączona';
+				}
+				if($status == 1){
+					echo 'Wyłączona';
+				}
+				if($status == 0){
+					echo 'Brak';
+				}
+
+
+				?></td>
+			<?php
+			$online = $this->escape($wtyczka->online);
+			$wt_id = $this->escape($wtyczka->wt_id);
+			if( $online == 2 )
+			{ ?>
+
+			<td>
+				<a href="<?php echo $this->baseUrl; ?>/admin/wylacz/wt_id/<?php
+				echo $wtyczka->wt_id;?>">Wyłącz</a>
+			<?php
+			}
+			if($online == 1 )  {
+				?>
+				<td>
+					<a href="<?php echo $this->baseUrl; ?>/admin/wlacz/wt_id/<?php
+					echo $wtyczka->wt_id;?>">Włącz</a>
+				</td>
+			<?php
+			}
+			if($online == 0 )  {
+			?>
+			<td>
+				<a href="<?php echo $this->baseUrl; ?>/admin/addwtyczka/wt_id/<?php
+				echo $wtyczka->wt_id;?>">Dodaj Wtyczke</a>
+			</td>
+		</tr> <?php } ?>
+	<?php endforeach; ?>
+
+</table>

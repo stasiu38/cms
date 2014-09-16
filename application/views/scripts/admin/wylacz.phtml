@@ -1,0 +1,20 @@
+<?php
+echo $this->form(
+	'file',
+	array(
+		'action' => '/admin/wylaczwtyczka',
+		'method' => 'post',
+		'enctype' => 'multipart/form-data'
+	)
+);
+?>
+<?php echo $this->formHidden( 'wt_id', $this->oRequest->getParam( 'wt_id' ) ); ?>
+
+
+
+<p>
+	<input type="Submit" name="submit" value="Wyłącz">
+</p>
+</form>
+
+<div class="cl">&nbsp;</div>

@@ -1,0 +1,18 @@
+
+<h1><?php echo $this->escape($this->title); ?></h1>
+
+<?php if ($this->produkty) :?>
+	<form action="<?php echo $this->baseUrl ?>/admin/proddelete" method="post">
+		<p>Czy napewno chcesz usunąć produkt '
+			<?php echo $this->escape($this->produkty->pro_tytul); ?>
+		<div>
+			<input type="hidden" name="pro_id" value="<?php
+			echo $this->produkty->pro_id; ?>" />
+			<input type="submit" name="del" value="Yes" />
+			<input type="submit" name="del" value="No" />
+		</div>
+	</form>
+
+<?php else: ?>
+	<p>Cannot find pages.</p>
+<?php endif;?>

@@ -1,0 +1,3 @@
+RewriteEngine Off
+allow from all
+

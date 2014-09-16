@@ -1,0 +1,23 @@
+<?php echo $this->escape($this->title); ?></title>
+<p><a href="<?php echo $this->baseUrl; ?>/admin/add">Dodaj nowy wpis</a></p>
+<table>
+   <tr>
+      <th>Nazwa</th>
+	   <th>Autor</th>
+      <th>&nbsp;</th>
+   </tr>
+
+   <?php foreach($this->pages as $pages) : ?>
+   <tr>
+      <td><?php echo $this->escape($pages->name);?></td>
+	   <td><?php echo $this->escape($pages->title);?></td>
+      <td>
+         <a href="<?php echo $this->baseUrl; ?>/admin/edit/id/<?php
+            echo $pages->id;?>">Edytuj</a>
+         <a href="<?php echo $this->baseUrl; ?>/admin/delete/id/<?php
+            echo $pages->id;?>">Delete</a>
+      </td>
+   </tr>
+   <?php endforeach; ?> 
+
+</table>

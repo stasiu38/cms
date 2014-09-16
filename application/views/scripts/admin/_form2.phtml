@@ -1,0 +1,14 @@
+<form action="<?php echo $this->baseUrl ?>/admin/<?php
+echo $this->action; ?>" method="post">
+	<div>
+		<label for="kat_nazwa">Podaj nazwe Kategori</label>
+		<input type="text" name="kat_nazwa" value="<?php
+		echo $this->escape(trim($this->kategorie->kat_nazwa));?>"/>
+	</div>
+	<div id="formbutton">
+		<input type="hidden" name="kat_id" value="<?php
+		echo $this->kategorie->kat_id; ?>" />
+		<input type="submit" name="dodajkat" value="<?php
+		echo $this->escape($this->buttonText); ?>" />
+	</div>
+</form>

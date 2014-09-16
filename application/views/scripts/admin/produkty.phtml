@@ -1,0 +1,30 @@
+<?php echo $this->escape($this->title); ?></title>
+<p><a href="<?php echo $this->baseUrl; ?>/admin/addprod">Dodaj nowy produkty</a></p>
+<table>
+	<tr>
+		<th>Tytul</th>
+		<th>Autor</th>
+		<th>opis</th>
+		<th>cena</th>
+	</tr>
+
+	<?php foreach($this->produkty as $produkty) : ?>
+		<tr>
+			<td><?php echo $this->escape($produkty->pro_tytul);?></td>
+			<td><?php echo $this->escape($produkty->pro_autor);?></td>
+			<td><?php echo $this->escape($produkty->pro_opis);?></td>
+			<td><?php echo $this->escape($produkty->pro_cena);?></td>
+			<td>
+				<a href="<?php echo $this->baseUrl; ?>/admin/prodedit/pro_id/<?php
+				echo $produkty->pro_id;?>">Edytuj</a>
+				<a href="<?php echo $this->baseUrl; ?>/admin/produktykategorie/pro_id/<?php
+				echo $produkty->pro_id;?>">Kategorie</a>
+				<a href="<?php echo $this->baseUrl; ?>/admin/proddelete/pro_id/<?php
+				echo $produkty->pro_id;?>">Delete</a>
+				<a href="<?php echo $this->baseUrl; ?>/admin/galeria/pro_id/<?php
+				echo $produkty->pro_id;?>">Zdjęcia</a>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+
+</table>

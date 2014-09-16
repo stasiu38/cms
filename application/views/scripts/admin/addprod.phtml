@@ -1,0 +1,56 @@
+<?php
+echo $this->form(
+	'form_produkty',
+	array(
+		'action' => '/admin/addprodsubmit',
+		'method' => 'post',
+	)
+);
+?>	<?php if( $this->oRequest->getParam( 'error_tytul' ) ): ?>
+	<div class="error"><?php echo $this->oRequest->getParam( 'error_tytul' ) ?></div>
+<?php endif; ?>
+
+<div class="row">
+	<label for="pro_tytul">Podaj tytul: </label>
+	<?php echo $this->formText( 'pro_tytul', $this->oRequest->getParam( 'pro_tytul' ) ) ?>
+</div>
+	<?php if( $this->oRequest->getParam( 'error_autor' ) ): ?>
+	<div class="error"><?php echo $this->oRequest->getParam( 'error_autor' ) ?></div>
+<?php endif; ?>
+<div class="row">
+	<label for="pro_autor">Podaj autora: </label>
+	<?php echo $this->formText( 'pro_autor', $this->oRequest->getParam( 'pro_autor' ) ) ?>
+</div>
+<?php if( $this->oRequest->getParam( 'error_opis' ) ): ?>
+	<div class="error"><?php echo $this->oRequest->getParam( 'error_opis' ) ?></div>
+<?php endif; ?>
+<div class="row">
+	<label for="pro_opis">Podaj krótki opis: </label>
+	<?php echo $this->formText( 'pro_opis', $this->oRequest->getParam( 'pro_opis' ) ) ?>
+</div>
+<?php if( $this->oRequest->getParam( 'error_tekst' ) ): ?>
+	<div class="error"><?php echo $this->oRequest->getParam( 'error_tekst' ) ?></div>
+<?php endif; ?>
+<div class="row">
+	<label for="pro_tekst">Podaj opis produktu: </label>
+	<?php echo $this->formText( 'pro_tekst', $this->oRequest->getParam( 'pro_tekst' ) ) ?>
+</div>
+<?php if( $this->oRequest->getParam( 'error_cena' ) ): ?>
+	<div class="error"><?php echo $this->oRequest->getParam( 'error_cena' ) ?></div>
+<?php endif; ?>
+<div class="row">
+	<label for="pro_cena">Podaj cene: </label>
+	<?php echo $this->formText( 'pro_cena', $this->oRequest->getParam( 'pro_cena' ) ) ?>
+</div>
+<?php if( $this->oRequest->getParam('error_logo') ): ?>
+	<div class="error"><?php echo $this->oRequest->getParam('error_logo') ?></div>
+<?php endif; ?>
+<div class="row">
+	<label for="logo">Wybierz logo produktu (jpg): </label>
+	<?php echo $this->formFile( 'logo' ); ?>
+</div>
+
+
+<div class="cl">&nbsp;</div>
+<?php echo $this->formSubmit( 'zapisz', 'Zapisz' ); ?>
+</form>

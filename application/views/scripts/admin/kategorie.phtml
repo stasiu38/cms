@@ -1,0 +1,32 @@
+<?php echo $this->escape($this->title); ?></title>
+<p><a href="<?php echo $this->baseUrl; ?>/admin/dodajkat">Dodaj nową kategorie</a></p>
+<table>
+	<tr>
+		<th>Nazwa</th>
+
+	</tr>
+
+	<?php foreach( $this->aKategorie as $aKategoria ): ?>
+		<tr>
+			<td><a href="<?php echo $this->url(array(
+					'controller' => 'admin',
+					'action' => 'kategorieprodukty',
+					'id' => $aKategoria->kat_id
+				)); ?>"><?php echo $aKategoria->kat_nazwa; ?></td>
+
+			<td>
+				<a href="<?php echo $this->baseUrl; ?>/admin/editkat/kat_id/<?php
+				echo $aKategoria->kat_id;?>">Edytuj</a>
+				<a href="<?php echo $this->baseUrl; ?>/admin/deletekat/kat_id/<?php
+				echo $aKategoria->kat_id;?>">Delete</a>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+
+</table>
+<?php foreach($this->kategorie as $kategorie) : ?>
+	<tr>
+		<td><?php echo $this->escape($kategorie->kat_nazwa);?></td>
+
+	</tr>
+<?php endforeach; ?>

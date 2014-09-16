@@ -1,0 +1,19 @@
+<?php
+echo $this->form(
+	'file',
+	array(
+		'action' => '/admin/wlaczwtyczka',
+		'method' => 'post',
+		'enctype' => 'multipart/form-data'
+	)
+);
+?>
+<?php echo $this->formHidden( 'wt_id', $this->oRequest->getParam( 'wt_id' ) ); ?>
+
+
+<p>
+	<input type="Submit" name="submit" value="Włącz">
+</p>
+</form>
+
+<div class="cl">&nbsp;</div>
